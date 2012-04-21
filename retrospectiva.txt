@@ -1,0 +1,26 @@
+
+O que foi bom?
+- Conseguimos terminar o problema
+- Iniciamos o rubista
+- Novas pessoas
+- O local é bacana
+- O problema escolhido foi bom, pois foi simples
+- Todos participaram
+- Seguimos o rito do dojo
+- Usamos o Git para controlar o código
+- Carinhas motivadoras (auto_test --> rubista)
+
+O que pode melhorar?
+- Não usar mac
+- Definir a linguagem do próximo dojo no dojo atual
+- Definir timebox para o dojo
+- Gravar o dojo (screencast)
+- Lanche
+
+Como será o próximo Dojo
+- Scala (Ambiente? [Test, IDE])
+- Data: 12/05 10:00
+
+horaextrabh@googlegroups.com
+devisland@googlegroups.com
+
