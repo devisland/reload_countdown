@@ -4,20 +4,15 @@ class Gun
 
   def initialize(wait_time)
     @wait_time = wait_time
-  end
-
-  def state
-    if @last_shot_at.nil? or
-       (Time.now - @last_shot_at >= @wait_time) or
-          (@reload_time == 0)
-      return :ready
-    end
-
-    :reloading
+    @reload_time = 0
   end
 
   def timeElapsed(seconds)
     @reload_time = @reload_time - seconds;
+  end
+
+  def ready?
+    @reload_time.nil? || @reload_time == 0
   end
 
   def reloading?
@@ -25,9 +20,10 @@ class Gun
   end
 
   def shot()
-    return false unless reloading?
+    return false if reloading?
 
     @reload_time = @wait_time
+    true
   end
 
 

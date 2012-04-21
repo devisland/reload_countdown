@@ -4,8 +4,8 @@ describe Gun do
   context "a gun with wait_time of 2 seconds" do
     subject{Gun.new(2)}
     its(:wait_time){should be(2)}
-    it "starts stopped" do
-      subject.state.should == :ready
+    it "starts ready" do
+      subject.should be_ready
     end
 
     it "shot" do
@@ -24,6 +24,7 @@ describe Gun do
 
     it "shot after 2 seconds" do
       subject.shot
+      subject.timeElapsed(2)
       subject.shot.should be_true
     end
 
