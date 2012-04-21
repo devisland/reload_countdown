@@ -7,5 +7,14 @@ describe Gun do
     it "starts stopped" do
       subject.stopped.should be_true
     end
+
+    it "shot" do
+      subject.shot.should be_true
+    end
+
+    it "wait after shot" do
+      subject.shot
+      subject.state.should == "wait"
+    end
   end
 end
