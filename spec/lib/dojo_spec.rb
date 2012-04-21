@@ -27,11 +27,11 @@ describe Gun do
       sleep(2)
       subject.shot.should be_true
     end
-    
+
     it "saves the shot time" do
       subject.shot
-      subject.last_shot_at
+      subject.last_shot_at.should_not be_nil
     end
-    
+
   end
 end
