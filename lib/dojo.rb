@@ -20,13 +20,14 @@ class Gun
     @reload_time = @reload_time - seconds;
   end
 
-  def shot()
-    if state == :reloading
-      return false
-    end
+  def reloading?
+    @reload_time > 0
+  end
 
-    @last_shot_at = Time.now
-    true
+  def shot()
+    return false unless reloading?
+
+    @reload_time = @wait_time
   end
 
 

@@ -12,9 +12,9 @@ describe Gun do
       subject.shot.should be_true
     end
 
-    it "wait after shot" do
+    it "after shot" do
       subject.shot
-      subject.state.should == :reloading
+      subject.should be_reloading
     end
 
     it "raise error with two shots" do
@@ -24,7 +24,6 @@ describe Gun do
 
     it "shot after 2 seconds" do
       subject.shot
-      sleep(2)
       subject.shot.should be_true
     end
 
