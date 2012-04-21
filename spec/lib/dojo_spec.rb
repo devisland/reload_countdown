@@ -17,15 +17,27 @@ describe Gun do
       subject.should be_reloading
     end
 
-    it "raise error with two shots" do
+    it "cannot shot two times in a row " do
       subject.shot
       subject.shot.should be_false
     end
 
     it "shot after 2 seconds" do
       subject.shot
-      subject.timeElapsed(2)
+      subject.time_elapsed(2)
       subject.shot.should be_true
+    end
+
+    it "shot after 10 seconds" do
+      subject.shot
+      subject.time_elapsed(10)
+      subject.shot.should be_true
+    end
+
+    it "can not shot after 1 second" do
+      subject.shot
+      subject.time_elapsed(1)
+      subject.shot.should be_false
     end
 
   end

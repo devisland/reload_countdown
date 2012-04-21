@@ -7,8 +7,8 @@ class Gun
     @reload_time = 0
   end
 
-  def timeElapsed(seconds)
-    @reload_time = @reload_time - seconds;
+  def time_elapsed(seconds)
+    @reload_time = @reload_time - seconds
   end
 
   def ready?
