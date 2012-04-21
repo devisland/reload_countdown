@@ -1,22 +1,21 @@
 class Gun
   attr_reader :wait_time
-  attr_reader :last_shot_at
 
   def initialize(wait_time)
     @wait_time = wait_time
-    @state = "stopped"
   end
 
   def state
-    if (Time.now - @last_shot_at >= @wait_time)
-      return "stopped"
+    if @last_shot_at.nil? or
+       (Time.now - @last_shot_at >= @wait_time)
+      return :ready
     end
 
-    "wait"
+    :reloading
   end
 
   def shot()
-    if state() == "wait"
+    if state == :reloading
       return false
     end
 

@@ -5,7 +5,7 @@ describe Gun do
     subject{Gun.new(2)}
     its(:wait_time){should be(2)}
     it "starts stopped" do
-      subject.state.should == "stopped"
+      subject.state.should == :ready
     end
 
     it "shot" do
@@ -14,7 +14,7 @@ describe Gun do
 
     it "wait after shot" do
       subject.shot
-      subject.state.should == "wait"
+      subject.state.should == :reloading
     end
 
     it "raise error with two shots" do
@@ -26,11 +26,6 @@ describe Gun do
       subject.shot
       sleep(2)
       subject.shot.should be_true
-    end
-
-    it "saves the shot time" do
-      subject.shot
-      subject.last_shot_at.should_not be_nil
     end
 
   end
